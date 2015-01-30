@@ -2,4 +2,4 @@ _assetic:
     resource: .
     type: assetic
 _app:
-    resource: /Users/joaosilva/WebDev/servers/site1/app/config/routing_dev.yml
+    resource: /Users/joaosilva/WebDev/servers/site1/symblog/app/config/routing_dev.yml

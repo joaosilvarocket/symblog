@@ -39,6 +39,7 @@
     <parameter key="locale">en</parameter>
     <parameter key="secret">378a7c92f4105cdbf58074febc62cd63b35825b3</parameter>
     <parameter key="database_path">null</parameter>
+    <parameter key="blogger_blog.emails.contact_email">dev@joaocsilva.com</parameter>
     <parameter key="controller_resolver.class">Symfony\Bundle\FrameworkBundle\Controller\ControllerResolver</parameter>
     <parameter key="controller_name_converter.class">Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser</parameter>
     <parameter key="response_listener.class">Symfony\Component\HttpKernel\EventListener\ResponseListener</parameter>

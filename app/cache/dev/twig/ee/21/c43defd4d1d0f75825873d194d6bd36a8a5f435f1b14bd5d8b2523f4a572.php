@@ -47,38 +47,57 @@ class __TwigTemplate_ee21c43defd4d1d0f75825873d194d6bd36a8a5f435f1b14bd5d8b2523f
         <h1>Contact symblog</h1>
     </header>
 
+    ";
+        // line 10
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "flashbag", array()), "get", array(0 => "blogger-notice"), "method"));
+        foreach ($context['_seq'] as $context["_key"] => $context["flashMessage"]) {
+            // line 11
+            echo "        <div class=\"blogger-notice\">
+            ";
+            // line 12
+            echo twig_escape_filter($this->env, $context["flashMessage"], "html", null, true);
+            echo "
+        </div>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flashMessage'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 15
+        echo "
     <p>Want to contact symblog?</p>
 
     <form action=\"";
-        // line 12
+        // line 18
         echo $this->env->getExtension('routing')->getPath("BloggerBlogBundle_contact");
         echo "\" method=\"post\" ";
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'enctype');
         echo " class=\"blogger\">
         ";
-        // line 13
+        // line 19
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'errors');
         echo "
 
         ";
-        // line 15
+        // line 21
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "name", array()), 'row');
         echo "
         ";
-        // line 16
+        // line 22
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "email", array()), 'row');
         echo "
         ";
-        // line 17
+        // line 23
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "subject", array()), 'row');
         echo "
         ";
-        // line 18
+        // line 24
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "body", array()), 'row');
         echo "
 
         ";
-        // line 20
+        // line 26
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'rest');
         echo "
 
@@ -99,6 +118,6 @@ class __TwigTemplate_ee21c43defd4d1d0f75825873d194d6bd36a8a5f435f1b14bd5d8b2523f
 
     public function getDebugInfo()
     {
-        return array (  82 => 20,  77 => 18,  73 => 17,  69 => 16,  65 => 15,  60 => 13,  54 => 12,  46 => 6,  43 => 5,  37 => 3,  11 => 1,);
+        return array (  101 => 26,  96 => 24,  92 => 23,  88 => 22,  84 => 21,  79 => 19,  73 => 18,  68 => 15,  59 => 12,  56 => 11,  52 => 10,  46 => 6,  43 => 5,  37 => 3,  11 => 1,);
     }
 }

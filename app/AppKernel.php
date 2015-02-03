@@ -10,7 +10,7 @@ class AppKernel extends Kernel
         date_default_timezone_set('Europe/London');
         parent::__construct($environment, $debug);
     }
-    
+
     public function registerBundles()
     {
         $bundles = array(
@@ -24,6 +24,8 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new AppBundle\AppBundle(),
             new Blogger\BlogBundle\BloggerBlogBundle(),
+
+            new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

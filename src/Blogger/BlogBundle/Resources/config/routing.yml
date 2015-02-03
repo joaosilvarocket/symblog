@@ -18,3 +18,17 @@ BloggerBlogBundle_contact:
     defaults: { _controller: BloggerBlogBundle:Page:contact }
     requirements:
         _method:  GET|POST
+
+BloggerBlogBundle_blog:
+    pattern:  /blog
+    defaults: { _controller: BloggerBlogBundle:Blog:blog }
+    requirements:
+        _method:  GET
+
+BloggerBlogBundle_blog_show:
+    pattern:  /blog/{id}
+    defaults: { _controller: BloggerBlogBundle:Blog:show }
+    requirements:
+        _method:  GET
+        id: \d+
+

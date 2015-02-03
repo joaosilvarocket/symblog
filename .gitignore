@@ -1,6 +1,4 @@
-.DS_Store
-.AppleDouble
-.LSOverride
+
 
 # Cache and logs (Symfony2)
 /app/cache/*
@@ -39,3 +37,9 @@
 
 # Composer PHAR
 /composer.phar
+/composer.lock
+/vendor/**/.git/
+
+.DS_Store
+.AppleDouble
+.LSOverride

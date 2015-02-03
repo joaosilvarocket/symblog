@@ -37,6 +37,7 @@
 
 # Composer PHAR
 /composer.phar
+/composer.lock
 /vendor/**/.git/
 
 .DS_Store

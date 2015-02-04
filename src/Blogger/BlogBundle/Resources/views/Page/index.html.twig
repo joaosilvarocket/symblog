@@ -1,5 +1,14 @@
 {% extends 'BloggerBlogBundle::layout.html.twig' %}
 
 {% block body %}
-    Blog homepage
+    <p>Pages</p>
+    <ul>
+    	<li><a href="{{ path('BloggerBlogBundle_homepage') }}">Home</a></li>
+    	<li><a href="{{ path('BloggerBlogBundle_blog') }}">Blog</a></li>
+    	<li><a href="{{ path('BloggerBlogBundle_about') }}">About</a></li>
+    	<li><a href="{{ path('BloggerBlogBundle_contact') }}">Contact</a></li>
+    </ul>
+    <br><br>
+    <p>Tutorial</p>
+    <a href="http://tutorial.symblog.co.uk/" target="_blank">Tutorial</a>
 {% endblock %}

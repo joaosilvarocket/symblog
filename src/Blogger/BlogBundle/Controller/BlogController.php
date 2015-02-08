@@ -16,13 +16,7 @@ class BlogController extends Controller
     {
         $em = $this->getDoctrine()->getEntityManager();
 
-        // $blog = $em->getRepository('BloggerBlogBundle:Blog');
-        $blogs = $em->createQueryBuilder()
-                    ->select('b')
-                    ->from('BloggerBlogBundle:Blog',  'b')
-                    ->addOrderBy('b.created', 'DESC')
-                    ->getQuery()
-                    ->getResult();
+        $blogs = $em->getRepository('BloggerBlogBundle:Blog')->getLatestBlogs();
 
         if (!$blogs) {
             throw $this->createNotFoundException('Unable to find Blog post.');
@@ -46,8 +40,14 @@ class BlogController extends Controller
             throw $this->createNotFoundException('Unable to find Blog post.');
         }
 
+        $comments = $em->getRepository('BloggerBlogBundle:Comment')
+            ->getCommentsForBlog($blog->getId());
+
+
         return $this->render('BloggerBlogBundle:Blog:show.html.twig', array(
             'blog' => $blog,
+            'comments' => $comments
         ));
     }
+
 }

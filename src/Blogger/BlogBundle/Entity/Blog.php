@@ -272,10 +272,16 @@ class Blog
     /**
      * Get comments
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getComments()
     {
         return $this->comments;
     }
+
+    public function __toString()
+    {
+        return $this->getTitle();
+    }
+
 }

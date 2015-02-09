@@ -5,6 +5,8 @@ namespace Blogger\BlogBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Blogger\BlogBundle\Entity\Comment;
 use Blogger\BlogBundle\Form\CommentType;
+use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Comment controller.
@@ -25,18 +27,19 @@ class CommentController extends Controller
         ));
     }
 
-    public function createAction($blog_id)
+    public function createAction(Request $request, $blog_id)
     {
         $blog = $this->getBlog($blog_id);
 
-        $comment  = new Comment();
+        $comment = new Comment();
         $comment->setBlog($blog);
-        $request = $this->getRequest();
-        $form    = $this->createForm(new CommentType(), $comment);
-        $form->bindRequest($request);
+        $form = $this->createForm(new CommentType(), $comment);
+        $form->handleRequest($request);
 
         if ($form->isValid()) {
-            // TODO: Persist the comment entity
+            $em = $this->getDoctrine()->getEntityManager();
+            $em->persist($comment);
+            $em->flush();
 
             return $this->redirect($this->generateUrl('BloggerBlogBundle_blog_show', array(
                 'id' => $comment->getBlog()->getId())) .
